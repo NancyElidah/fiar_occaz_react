@@ -4,7 +4,6 @@ import sary from '../../assets/vendors/images/banner-img.png'
 import { Link } from "react-router-dom";
 import Footer from "../../Footer";
 import withRouter from "../Navigation/WithRouter";
-import { useEffect } from "react";
 import AnnonceService from "../services/AnnonceService";
 import withNavigateHook from "../Navigation/WithNavigateHook";
 class Annonce extends Component{
@@ -29,13 +28,13 @@ class Annonce extends Component{
     componentDidMount() {
         this.fetchData();
     }
-
-    FetchDataComponent = () => {
-        useEffect(() => {
+    
+    componentDidUpdate(prevProps) {
+        if (this.props !== prevProps) {
             this.fetchData();
-        }, [this.state]);
-        return null;
+        }
     }
+    
     fetchData = () => {
         let token = sessionStorage.getItem("token");
         let user = sessionStorage.getItem("utilisateur");
