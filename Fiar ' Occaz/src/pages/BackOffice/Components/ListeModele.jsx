@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../../Header"
 import { Component } from "react";
 import Modele from "../services/Modele";
+import { useEffect } from "react";
 class ListeModele extends Component {
     constructor(props){
         super(props);
@@ -10,7 +11,19 @@ class ListeModele extends Component {
         }
     }
     componentDidMount(){
-        Modele.getAllBoite().then((res)=> {
+        this.fetchData();
+    }
+
+    FetchDataComponent = () => {
+        useEffect(() => {
+            this.fetchData();
+        }, [this.state]);
+        return null;
+    }
+    fetchData = () => {
+        let token = sessionStorage.getItem("token");
+        let id = sessionStorage.getItem("utilisateur");
+        Modele.getAllModele(token,id).then((res)=> {
             this.setState({liste_modele:res.data});
         });
     }
@@ -18,6 +31,7 @@ class ListeModele extends Component {
         return(
             <>
             <Header/>
+            <this.FetchDataComponent />
             <div className="main-container" style={{marginTop:-150}}>
                     <div className="pd-ltr-20 xs-pd-20-10">
                         <div className="min-height-200px">
@@ -29,7 +43,7 @@ class ListeModele extends Component {
                                 <p>Crud <code>.Model</code></p>
                             </div>
                             <div className="pull-right">
-                                <Link to="/add_model" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button">+ Ajouter une nouvelle modèle</Link>
+                                <Link to={`/${sessionStorage.getItem("token")}/add_model`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button">+ Ajouter une nouvelle modèle</Link>
                             </div>
                         </div>
                         <table className="table">
@@ -45,12 +59,12 @@ class ListeModele extends Component {
                                     this.state.liste_modele.map (
                                         modele=>
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>{modele.idModele}</td>
+                                            <th scope="row">{modele.idModele}</th>
+                                            <td>Modele {modele.idModele}</td>
                                             <td>{modele.nom}</td>
                                             <td>
                                                 <div>
-                                                    <Link to="#basic-table" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-edit"></i></Link>
+                                                    <Link to={`update_modele/${modele.idModele}`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-edit"></i></Link>
                                                 </div>
                                             </td>
                                             <td>

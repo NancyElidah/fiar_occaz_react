@@ -2,6 +2,7 @@ import { Component } from "react";
 import Footer from "../../Footer";
 import Header from "../../Header";
 import Modele from "../services/Modele";
+import WithNavigateHook  from "../Navigation/WithNavigateHook";
 
 class Model extends Component {
     constructor(props){
@@ -20,12 +21,16 @@ class Model extends Component {
             idmodele:null,
             nom : this.state.nom
         }
+        let token = sessionStorage.getItem("token");
+        let id = sessionStorage.getItem("utilisateur");
         console.log(boite);
-        Modele.createBoite(boite).then(() => {
+        Modele.createModel(token,id,boite).then(() => {
             this.setState({
                 message:'insertion reussie'
             })
         });
+        this.props.navigation(`/:${sessionStorage.getItem("token")}/gestion_modele`);        // alert("insertion réussie");
+        
     }
     handleNom = (e) => {
         var value = e.target.value;
@@ -68,4 +73,4 @@ class Model extends Component {
         );
     }
 }
-export default Model;
+export default WithNavigateHook(Model);

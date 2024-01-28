@@ -2,34 +2,39 @@ import { Component } from "react";
 import Footer from "../../Footer";
 import Header from "../../Header";
 import Boite from "../services/Boite";
+import withNavigateHook from "../Navigation/WithNavigateHook";
 
 class BoiteVitesse extends Component{
     constructor(props){
         super(props);
         this.state = {
             message :'',
-
+            
             idboite :'',
             nom :''
-
+            
         }
         this.addBoite = this.addBoite.bind(this);
         this.handleNom = this.handleNom.bind(this);
     }
     addBoite = (e) => {
         e.preventDefault();
-        // console.log("teste");
         let boite = {
             idboite:null,
             nom : this.state.nom
         }
+        let token = sessionStorage.getItem("token");
+        console.log(token);
+        let user = sessionStorage.getItem("utilisateur");
+        console.log(user);
         console.log(boite);
-        Boite.createBoite(boite).then(() => {
+        Boite.createBoite(token,user,boite).then(() => {
             this.setState({
                 message:'insertion reussie'
             })
         });
-    }
+        console.log(JSON.stringify(boite))
+        this.props.navigation(`/:${sessionStorage.getItem("token")}/gestion_boite`);    }
     handleNom = (e) => {
         var value = e.target.value;
         this.setState({
@@ -71,4 +76,4 @@ class BoiteVitesse extends Component{
         );
     }
 }
-export default BoiteVitesse;
+export default withNavigateHook(BoiteVitesse);

@@ -30,7 +30,7 @@ const Gestion = () => {
 								<td>Type de voiture</td>
 								<td>
                                     <div>
-                                        <Link to="/gestion_type" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
+                                        <Link to={`/${sessionStorage.getItem("token")}/gestion_type`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
                                     </div>
                                 </td>
                                 
@@ -40,7 +40,7 @@ const Gestion = () => {
 								<td>Marque de Voiture</td>
 								<td>
                                     <div>
-                                        <Link to="/gestion_marque" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
+                                        <Link to={`/${sessionStorage.getItem("token")}/gestion_marque`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
                                     </div>
                                 </td>
 							</tr>
@@ -49,7 +49,7 @@ const Gestion = () => {
 								<td>Boîte de vitesse</td>
 								<td>
                                     <div>
-                                        <Link to="/gestion_boite" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
+                                        <Link to={`/${sessionStorage.getItem("token")}/gestion_boite`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
                                     </div>
                                 </td>
 							</tr>
@@ -58,7 +58,7 @@ const Gestion = () => {
 								<td>Modèle</td>
 								<td>
                                     <div>
-                                        <Link to="/gestion_modele" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
+                                        <Link to={`/${sessionStorage.getItem("token")}/gestion_modele`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
                                     </div>
                                 </td>
 							</tr>
@@ -67,7 +67,7 @@ const Gestion = () => {
 								<td>Energie</td>
 								<td>
                                     <div>
-                                        <Link to="/gestion_energie" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
+                                        <Link to={`/${sessionStorage.getItem("token")}/gestion_energie`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
                                     </div>
                                 </td>
 							</tr>
@@ -76,7 +76,16 @@ const Gestion = () => {
 								<td>Couleur</td>
 								<td>
                                     <div>
-                                        <Link to="/gestion_couleur" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
+                                        <Link to={`/${sessionStorage.getItem("token")}/gestion_couleur`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
+                                    </div>
+                                </td>
+							</tr>
+							<tr>
+								<th scope="row">7</th>
+								<td>Pays</td>
+								<td>
+                                    <div>
+                                        <Link to={`/${sessionStorage.getItem("token")}/gestion_pays`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye"></i></Link>
                                     </div>
                                 </td>
 							</tr>

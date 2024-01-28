@@ -1,12 +1,18 @@
 import axios from 'axios';
-const base_url = "http://localhost:8080/bv";
+const base_url = "https://fiaroccazback-production.up.railway.app/bv";
 
 class Boite {
-    createBoite(boite){
-        return axios.post(base_url,boite);
+    createBoite(token,id,boite){
+        return axios.post(base_url+'/'+token+'/add/'+id,boite);
     }
-    getAllBoite(){
-        return axios.get(base_url);
+    getAllBoite(token,id){
+        return axios.get(base_url+'/'+token+'/getall/'+id);
+    }
+    UpdateBoite(token,id , idBoite , boite){
+        return axios.put(base_url+'/'+token+'/update/'+id+'/'+idBoite,boite);
+    }
+    getOneBoite(token,id,idBoite){
+        return axios.get(base_url+'/'+token+'/getone/'+id+'/'+idBoite);
     }
 }
 export default new Boite();

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../../Header"
 import { Component } from "react";
 import Boite from "../services/Boite";
-
+import { useEffect } from "react";
 class ListeBoite extends Component{
     constructor(props){
         super(props);
@@ -10,17 +10,31 @@ class ListeBoite extends Component{
             boite :[],
         }
     }
-    
     componentDidMount(){
-        Boite.getAllBoite().then((res) => {
-            this.setState({boite:res.data});
-            console.log("haha");
-        });
+        this.fetchData();
     }
+
+    FetchDataComponent = () => {
+        useEffect(() => {
+            this.fetchData();
+        }, [this.state]);
+        return null;
+    }
+    fetchData = () => {
+        let token = sessionStorage.getItem("token");
+        console.log(token);
+        let user = sessionStorage.getItem("utilisateur");
+        console.log(user);
+        Boite.getAllBoite(token,user).then((res)=> {
+            this.setState({boite:res.data});
+        });    
+    }
+
     render(){
         return(
             <>
             <Header/>
+            <this.FetchDataComponent />
             <div className="main-container" style={{marginTop:-150}}>
                     <div className="pd-ltr-20 xs-pd-20-10">
                         <div className="min-height-200px">
@@ -32,7 +46,7 @@ class ListeBoite extends Component{
                                 <p>Crud <code>.Boîtes de vitesse</code></p>
                             </div>
                             <div className="pull-right">
-                                <Link to="/add_boite" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button">+ Ajouter une nouvelle boîte</Link>
+                                <Link to={`/${sessionStorage.getItem("token")}/add_boite`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button">+ Ajouter une nouvelle boîte</Link>
                             </div>
                         </div>
                         <table className="table">
@@ -48,12 +62,12 @@ class ListeBoite extends Component{
                                     this.state.boite.map(
                                         boites =>
                                         <tr key={boites.idBV}>
-                                        <th scope="row">1</th>
-                                        <td>{boites.idBV}</td>
+                                        <th scope="row">{boites.idBV}</th>
+                                        <td>BOITE {boites.idBV}</td>
                                         <td>{boites.nom}</td>
                                         <td>
                                             <div>
-                                                <Link to="#basic-table" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-edit"></i></Link>
+                                                <Link to={`update_boite/${boites.idBV}`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-edit"></i></Link>
                                             </div>
                                         </td>
                                         <td>
