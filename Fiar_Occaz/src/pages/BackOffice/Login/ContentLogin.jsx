@@ -26,10 +26,10 @@ class ContentLogin extends Component{
 			if(res.data.token==null){
 				alert("Vous n'êtes pas inscrit sur notre site");
 			}else{
-				if(res.data.token=='invalid'){
+				if(res.data.token==='invalid'){
 					alert('connexion invalid');
 				}else{
-					if(res.data.status == 10){
+					if(res.data.status === 10){
 						console.log(res.data.user);
 						sessionStorage.setItem("utilisateur",res.data.user);
 						sessionStorage.setItem("token",res.data.token);
@@ -106,7 +106,7 @@ class ContentLogin extends Component{
 										</div>
 										<div className="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OU</div>
 										<div className="input-group mb-0">
-											<a className="btn btn-outline-primary btn-lg btn-block" href="register.html">S'inscrire</a>
+											<a className="btn btn-outline-primary btn-lg btn-block">S'inscrire</a>
 										</div>
 									</div>
 								</div>

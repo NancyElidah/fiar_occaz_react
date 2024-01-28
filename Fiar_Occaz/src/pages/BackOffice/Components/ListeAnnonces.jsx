@@ -33,6 +33,7 @@ class ListeAnnonce extends Component{
         return (
             <>
             <Header/>
+            <this.FetchDataComponent />
             <div className="main-container" style={{marginTop:-150}}>
             {
                         this.state.liste_marque.map (

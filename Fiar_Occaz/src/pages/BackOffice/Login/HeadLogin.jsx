@@ -5,7 +5,7 @@ const HeadLogin = () => {
         <div className="login-header box-shadow">
             <div className="container-fluid d-flex justify-content-between align-items-center">
                 <div className="brand-logo">
-                    <a href="login.html">
+                    <a >
                         <img src={register} alt="" />
                     </a>
                 </div>
