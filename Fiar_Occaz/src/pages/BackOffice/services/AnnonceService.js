@@ -6,7 +6,7 @@ class AnnonceService {
         return axios.get(base_url+'/'+token+'/getAll/'+id);
     }
     getOneAnnonce(token,id, idA){
-        return axios.get(base_url+'/'+token+'/getAll/'+id+'/'+idA);
+        return axios.get(base_url+'/'+token+'/getOne/'+id+'/'+idA);
     }
     validAnnonce(token,id, idA){
         return axios.post(base_url+'/'+token+'/valider/'+idA+'/'+id);
