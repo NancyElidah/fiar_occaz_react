@@ -3,6 +3,7 @@ import Header from "../../Header"
 import { Component } from "react";
 import TypeService from "../services/TypeService";
 import { useEffect } from "react";
+import VoitureService from "../services/VoitureService";
 class ListeVoiture extends Component {
     constructor(props){
         super(props);
@@ -24,7 +25,7 @@ class ListeVoiture extends Component {
         let token = sessionStorage.getItem("token");
         let id = sessionStorage.getItem("utilisateur");
         console.log(token , id)
-        TypeService.getAllType(token,id).then((res)=> {
+        VoitureService.getAllVoiture(token,id).then((res)=> {
             this.setState({liste_type:res.data});
         });
     }

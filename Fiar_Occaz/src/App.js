@@ -51,7 +51,6 @@ function App() {
               <Route path="/:token/gestion_energie" element= {<ListeEnergie/>}/>
               <Route path="/:token/gestion_couleur" element= {<ListeCouleur/>}/>
               <Route path="/:token/gestion_pays" element= {<ListePays/>}/>
-              <Route path="/:token/liste_voiture" element= {<ListeVoiture/>}/>
 
                 {/* add */}
               <Route path="/:token/add_type" element= {<Type/>}/>
@@ -79,6 +78,7 @@ function App() {
               <Route path="/:token/select_type" element= {<SelectType/>}/>
               <Route path="/:token/stat_chiffre/:idType/:annee" element= {<StatChiffre/>}/>
               <Route path="/:token/stat_element/:etat" element= {<Statistique/>}/>
+              <Route path="/:token/liste_voiture" element= {<ListeVoiture/>}/>
           </Routes>
       </>
   );
