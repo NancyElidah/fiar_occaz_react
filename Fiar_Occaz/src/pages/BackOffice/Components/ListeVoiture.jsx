@@ -68,7 +68,7 @@ class ListeVoiture extends Component {
                                         <tr>
                                             <th scope="row">{modele.idVoiture}</th>
                                             <td>Voiture {modele.idVoiture}</td>
-                                            <td>{modele.couleur.nom}</td>
+                                            <td>{modele.couleur.couleur}</td>
                                             <td>{modele.type.nom}</td>
                                             <td>{modele.marque.nom}</td>
                                             <td>{modele.modele.nom}</td>
