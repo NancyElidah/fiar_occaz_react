@@ -17,6 +17,7 @@ class ContentInsc extends Component{
 		this.handleMotDePasse = this.handleMotDePasse.bind(this);
         this.handleNom = this.handleNom.bind(this);
         this.handleEtat = this.handleEtat.bind(this);
+		this.inscription = this.inscription.bind(this);
 	}
 	handleEmail= (e) => {
         var value = e.target.value;
@@ -76,13 +77,13 @@ class ContentInsc extends Component{
 								<div className="select-role">
 									<div className="btn-group btn-group-toggle" data-toggle="buttons">
 										<label className="btn">
-											<input type="radio" name="options" id="admin" value={10} onChange={this.handleEtat} />
+											<input type="radio" name="options" id="admin" value={10} onChange={event =>this.handleEtat(event)} />
 												<div className="icon"><img src={personne} className="svg" alt="" /></div>
 												<span>Je suis</span>
 												l'admin
 										</label>
 										<label className="btn">
-											<input type="radio" name="options" id="user" value={5} onChange={this.handleEtat} />
+											<input type="radio" name="options" id="user" value={5} onChange={event =>this.handleEtat(event)} />
 											<div className="icon"><img src={personne} className="svg" alt="" /></div>
 											<span>Je suis </span>
 											un Client
@@ -111,7 +112,7 @@ class ContentInsc extends Component{
 									<div className="col-sm-12">
 										<div className="input-group mb-0">
 											
-											<button className="btn btn-primary btn-lg btn-block" onClick={this.login}>S'inscrire</button>
+											<button className="btn btn-primary btn-lg btn-block" onClick={this.inscription}>S'inscrire</button>
 										</div>
 										<div className="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OU</div>
 										<div className="input-group mb-0">

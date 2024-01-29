@@ -11,5 +11,9 @@ class StatistiqueBord {
             return axios.get(base_url+'v_stat_modele/'+token+'/getstat/'+id+'/'+status); 
         }
     }
+
+    // getStatChiffre(token , id , annee , idType){
+
+    // }
 }
 export default new StatistiqueBord();
