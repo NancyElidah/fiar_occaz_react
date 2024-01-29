@@ -15,13 +15,6 @@ class ListeAnnonce extends Component{
     componentDidMount(){
         this.fetchData();
     }
-
-    FetchDataComponent = () => {
-        useEffect(() => {
-            this.fetchData();
-        }, [this.state]);
-        return null;
-    }
     fetchData = () => {
         let token = sessionStorage.getItem("token");
         let id = sessionStorage.getItem("utilisateur");
