@@ -28,6 +28,7 @@ import ModelUp from './pages/BackOffice/Components/update/ModelUp';
 import PaysUp from './pages/BackOffice/Components/update/PaysUp';
 import TypeUp from './pages/BackOffice/Components/update/TypeUp';
 import Inscription from './pages/BackOffice/Inscription';
+import SelectType from './pages/BackOffice/Components/SelectType';
 import Login from './pages/BackOffice/Login';
 import {Route,Routes} from 'react-router-dom'
 
@@ -75,6 +76,7 @@ function App() {
               <Route path="/:token/liste_annonce/view_annonce/:idannonce" element= {<Annonce/>}/>
               <Route path="/:token/add_commission" element= {<Commission/>}/>
               <Route path="/:token/liste_commission" element= {<ListeCommission/>}/>
+              <Route path="/:token/select_type" element= {<SelectType/>}/>
               <Route path="/:token/stat_chiffre/:idType/:annee" element= {<StatChiffre/>}/>
               <Route path="/:token/stat_element/:etat" element= {<Statistique/>}/>
           </Routes>

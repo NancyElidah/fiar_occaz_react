@@ -2,7 +2,6 @@ import { Component } from "react";
 import Header from "../../Header";
 import Footer from "../../Footer";
 import TypeService from "../services/TypeService";
-import ComService from "../services/ComService";
 import withNavigateHook from "../Navigation/WithNavigateHook";
 class SelectType extends Component{
     constructor (props){

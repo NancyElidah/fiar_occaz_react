@@ -84,7 +84,7 @@ class Header extends Component {
 				 <div className="sidebar-menu">
 					 <ul id="accordion-menu">
 					 <li className="dropdown">
-					 <Link to={`/${sessionStorage.getItem("token")}/stat_chiffre`} className="dropdown-toggle">
+					 <Link to={`/${sessionStorage.getItem("token")}/select_type`} className="dropdown-toggle">
 						 <span className="micon"><i className="icon-copy fa fa-money" aria-hidden="true"></i></span><span className="">Chiffre d'affaire</span>
 					 </Link>
 						 </li>	
