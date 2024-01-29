@@ -31,7 +31,7 @@ class  StatChiffre extends Component{
     }
     componentDidMount(){
         StatistiqueBord.getStatChiffre(sessionStorage.getItem("token"),sessionStorage.getItem("utilisateur"),this.state.annee,this.state.idType).then((res)=> {
-            const formData = response.data.map(item => ({
+            const formData = res.data.map(item => ({
                 name: item.Mois,
                 Montant: item.chiffreAffaire
             }));
