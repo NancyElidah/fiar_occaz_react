@@ -12,8 +12,13 @@ class StatistiqueBord {
         }
     }
 
-    // getStatChiffre(token , id , annee , idType){
-
-    // }
+    getStatChiffre(token , id , annee , idType){
+        return axios.get(base_url +'/api/chiffre-affaire'+token+'/ventes-mensuelles/annee/'+id ,  {
+            params: {
+                typeId: idType,
+                annee: annee
+            }
+        })
+    }
 }
 export default new StatistiqueBord();
