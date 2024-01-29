@@ -47,6 +47,7 @@ class ContentLogin extends Component{
 	}
 	handleEmail= (e) => {
         var value = e.target.value;
+		console.log(value)
         this.setState({
             email :value
         })
@@ -58,6 +59,7 @@ class ContentLogin extends Component{
             motDePasse :value
         })
     }
+	// handle
 	render(){
 		return (
 			<>
