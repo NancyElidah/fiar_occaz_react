@@ -3,6 +3,7 @@ import Header from '../../Header';
 import Footer from '../../Footer';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import withRouter from '../Navigation/WithRouter';
+import StatistiqueBord from '../services/StatistiqueBord';
 
 const data = [
  {name: 'Jan', Montant: 4000},
@@ -29,7 +30,15 @@ class  StatChiffre extends Component{
         }
     }
     componentDidMount(){
-
+        StatistiqueBord.getStatChiffre(sessionStorage.getItem("token"),sessionStorage.getItem("utilisateur"),this.state.annee,this.state.idType).then((res)=> {
+            const formData = response.data.map(item => ({
+                name: item.Mois,
+                Montant: item.chiffreAffaire
+            }));
+            this.setState({
+                _data:formData
+            })
+        });
     }
     render(){
         return(
