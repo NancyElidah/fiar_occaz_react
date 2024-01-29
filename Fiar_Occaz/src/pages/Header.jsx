@@ -26,7 +26,7 @@ class Header extends Component {
 							 <i className="dw dw-search2 search-icon"></i>
 							 <input type="text" className="form-control search-input" placeholder="Search Here"/>
 							 <div className="dropdown">
-								 <Link className="dropdown-toggle no-arrow" to=""  data-toggle="dropdown">
+								 <Link className="dropdown-toggle no-arrow" to="" role="button" data-toggle="dropdown">
 									 <i className="ion-arrow-down-c"></i>
 								 </Link>
 							 </div>
@@ -38,7 +38,7 @@ class Header extends Component {
 	  
 				 <div className="user-notification">
 					 <div className="dropdown">
-						 <button onClick={this.handleLogOut} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" ><i className="fa fa-sign-out"></i></button>
+						 <button onClick={this.handleLogOut} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-sign-out"></i></button>
 					 </div>
 				 </div>
 				 </div>
@@ -95,6 +95,15 @@ class Header extends Component {
 					 <li className="dropdown">
 					 <Link to={`/${sessionStorage.getItem("token")}/liste_commission`} className="dropdown-toggle">
 						 <span className="micon"><i className="icon-copy fa fa-plus-square-o" aria-hidden="true"></i></span><span className="">Commission</span>
+					 </Link>
+						 </li>	
+					 </ul>
+				 </div>
+				 <div className="sidebar-menu">
+					 <ul id="accordion-menu">
+					 <li className="dropdown">
+					 <Link to={`/${sessionStorage.getItem("token")}/liste_voiture`} className="dropdown-toggle">
+						 <span className="micon"><i className="icon-copy fa fa-plus-square-o" aria-hidden="true"></i></span><span className="">Voiture</span>
 					 </Link>
 						 </li>	
 					 </ul>

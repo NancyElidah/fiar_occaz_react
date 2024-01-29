@@ -9,7 +9,8 @@ class Statistique extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      title:'',
+      title_vendu:'',
+      title_nonvendu:'',
       type : '',
       etat : this.props.params.etat,
       data_vendu :  [],
@@ -21,15 +22,53 @@ class Statistique extends React.Component {
     let id = sessionStorage.getItem("utilisateur");
     console.log(this.state.etat)
     StatistiqueBord.getStatistique(token,id,this.state.etat ,10).then((res)=> {
+      const formData = res.data.map(item => {
+        if(this.state.etat ===":type"){
+            return {
+                name : item.type,
+                value : item.nombre 
+            }
+        }else if (this.state.etat===":marque"){
+          return{
+            name : item.marque ,
+            value : item.nombre
+          }
+        }else if (this.state.etat===":model"){
+          return {
+            name : item.modele,
+            value : item.nombre
+          }
+        }
+      });
       this.setState({
-        data_vendu:res.data,
-        title: 'statistique par '+this.state.etat,
+        data_vendu:formData,
+        title_vendu: 'statistique par '+this.state.etat + "pour les voitures  Vendues",
         type:this.state.etat
       });
     }); 
     StatistiqueBord.getStatistique(token,id,this.state.etat ,5).then((res)=> {
+      const formData = res.data.map(item => {
+        if(this.state.etat ===":type"){
+            return {
+                name : item.type,
+                value : item.nombre 
+            }
+        }else if (this.state.etat===":marque"){
+          return{
+            name : item.marque ,
+            value : item.nombre
+          }
+        }else if (this.state.etat===":model"){
+          return {
+            name : item.modele,
+            value : item.nombre
+          }
+        }
+      });
       this.setState({
-        data_nonVendu:res.data
+        data_nonVendu:formData,
+        title_nonvendu: 'statistique par '+this.state.etat + "Pour les voitures non vendues ",
+        type:this.state.etat
       });
     }); 
 }
@@ -43,8 +82,8 @@ class Statistique extends React.Component {
                             <div className="page-header">
                             <div className="clearfix mb-20">
                             <div className="pull-left">
-                                <h4 className="text-blue h4" style={{color:"blue"}}>{this.state.title}</h4>
-                                <p>Crud <code>.{this.state.type}</code></p>
+                                <h4 className="text-blue h4" style={{color:"blue"}}>{this.state.title_vendu} </h4>
+                                <p>Stat <code>.{this.state.type}</code></p>
                                 <div className="form-group row" style={{marginLeft:300}}>
 
             <PieChart width={450} height={400}>
@@ -65,6 +104,8 @@ class Statistique extends React.Component {
 </div>
 </div>
           <div className="pull-right">
+          <h4 className="text-blue h4" style={{color:"blue"}}>{this.state.title_nonvendu} </h4>
+                                <p>Stat <code>.{this.state.type}</code></p>
               <div className="form-group row" style={{marginLeft:300}}>
 
                 <PieChart width={450} height={400}>
@@ -87,8 +128,6 @@ class Statistique extends React.Component {
 </div>
 </div>
 </div>
-            
-
     </div>
     </div>
     <Footer/>

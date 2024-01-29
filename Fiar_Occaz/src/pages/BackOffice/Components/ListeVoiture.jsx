@@ -40,11 +40,8 @@ class ListeVoiture extends Component {
                             <div className="pd-20 card-box mb-30">
                         <div className="clearfix mb-20">
                             <div className="pull-left">
-                                <h4 className="text-blue h4" style={{color:"blue"}}>Liste des Types de voiture</h4>
+                                <h4 className="text-blue h4" style={{color:"blue"}}>Liste des voiture</h4>
                                 <p>Crud <code>.Type</code></p>
-                            </div>
-                            <div className="pull-right">
-                                <Link to={`/${sessionStorage.getItem("token")}/add_type`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button">+ Ajouter une nouvelle type</Link>
                             </div>
                         </div>
                         <table className="table">
@@ -52,7 +49,15 @@ class ListeVoiture extends Component {
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">ID</th>
-                                    <th scope="col">Intitule</th>
+                                    <th scope="col">Couleur</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Marque</th>
+                                    <th scope="col">Modele</th>
+                                    <th scope="col">Pays</th>
+                                    <th scope="col">Vitesse</th>
+                                    <th scope="col">Energie</th>
+                                    <th scope="col">Kilometrage</th>
+                                    <th scope="col">Prix</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -60,19 +65,17 @@ class ListeVoiture extends Component {
                                     this.state.liste_type.map (
                                         modele=>
                                         <tr>
-                                            <th scope="row">{modele.idType}</th>
-                                            <td>Type {modele.idType}</td>
-                                            <td>{modele.nom}</td>
-                                            <td>
-                                                <div>
-                                                    <Link to={`update_type/${modele.idType}`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-edit"></i></Link>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <Link to="#basic-table" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-trash-o"></i></Link>
-                                                </div>
-                                            </td>
+                                            <th scope="row">{modele.idVoiture}</th>
+                                            <td>Voiture {modele.idVoiture}</td>
+                                            <td>{modele.couleur.nom}</td>
+                                            <td>{modele.type.nom}</td>
+                                            <td>{modele.marque.nom}</td>
+                                            <td>{modele.modele.nom}</td>
+                                            <td>{modele.Pays.nom}</td>
+                                            <td>{modele.boiteVitesse.nom}</td>
+                                            <td>{modele.energie.energie}</td>
+                                            <td>{modele.kilometrage}</td>
+                                            <td>{modele.prix}</td> 
                                         </tr>
                                     )
                                 }

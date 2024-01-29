@@ -14,6 +14,7 @@ import ListeMarque from './pages/BackOffice/Components/ListeMarque';
 import ListeModele from './pages/BackOffice/Components/ListeModele';
 import ListePays from './pages/BackOffice/Components/ListePays';
 import ListeType from './pages/BackOffice/Components/ListeType';
+import ListeVoiture from './pages/BackOffice/Components/ListeVoiture';
 import Marque from './pages/BackOffice/Components/Marque';
 import Model from './pages/BackOffice/Components/Model';
 import Pays from './pages/BackOffice/Components/Pays';
@@ -26,6 +27,7 @@ import MarqueUp from './pages/BackOffice/Components/update/MarqueUp';
 import ModelUp from './pages/BackOffice/Components/update/ModelUp';
 import PaysUp from './pages/BackOffice/Components/update/PaysUp';
 import TypeUp from './pages/BackOffice/Components/update/TypeUp';
+import Inscription from './pages/BackOffice/Inscription';
 import Login from './pages/BackOffice/Login';
 import {Route,Routes} from 'react-router-dom'
 
@@ -35,8 +37,11 @@ function App() {
       <>
           <Routes>
               <Route path="/" element= {<Login/>}/>
+              <Route path="/inscription" element= {<Inscription/>}/>
+
               <Route path="/:token/accueil" element={<Accueil />}/>
               <Route path="/:token/Component" element= {<Gestion/>}/>
+
               {/* liste */}
               <Route path="/:token/gestion_type" element= {<ListeType/>}/>
               <Route path="/:token/gestion_boite" element= {<ListeBoite/>}/>
@@ -45,6 +50,7 @@ function App() {
               <Route path="/:token/gestion_energie" element= {<ListeEnergie/>}/>
               <Route path="/:token/gestion_couleur" element= {<ListeCouleur/>}/>
               <Route path="/:token/gestion_pays" element= {<ListePays/>}/>
+              <Route path="/:token/liste_voiture" element= {<ListeVoiture/>}/>
 
                 {/* add */}
               <Route path="/:token/add_type" element= {<Type/>}/>
@@ -69,7 +75,7 @@ function App() {
               <Route path="/:token/liste_annonce/view_annonce/:idannonce" element= {<Annonce/>}/>
               <Route path="/:token/add_commission" element= {<Commission/>}/>
               <Route path="/:token/liste_commission" element= {<ListeCommission/>}/>
-              <Route path="/:token/stat_chiffre" element= {<StatChiffre/>}/>
+              <Route path="/:token/stat_chiffre/:idType/:annee" element= {<StatChiffre/>}/>
               <Route path="/:token/stat_element/:etat" element= {<Statistique/>}/>
           </Routes>
       </>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const base_url = "https://fiaroccazback-production.up.railway.app/login";
+const base_url = "http://localhost:8080/login";
 
 class UserService {
     loginUser(email, motDePasse){
@@ -8,6 +8,9 @@ class UserService {
                 'Content-Type': 'application/json'
             }
         });
+    }
+    signUp (user){
+        return axios.post("http://localhost:8080/sign_up",user);
     }
     
 }

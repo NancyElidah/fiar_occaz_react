@@ -1,7 +1,7 @@
 import { Component } from "react";
 import Footer from "../../Footer";
 import Header from "../../Header";
-import test from "../../assets/vendors/images/banner-img.png";
+import test from "../../assets/src/images/layout/v1.jpg";
 import { Link } from "react-router-dom";
 import AnnonceService from "../services/AnnonceService";
 import { useEffect } from "react";
@@ -33,7 +33,6 @@ class ListeAnnonce extends Component{
         return (
             <>
             <Header/>
-            <this.FetchDataComponent />
             <div className="main-container" style={{marginTop:-150}}>
             {
                         this.state.liste_marque.map (

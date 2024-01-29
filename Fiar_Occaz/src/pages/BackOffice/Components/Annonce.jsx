@@ -1,9 +1,10 @@
 import { Component } from "react";
 import Header from "../../Header";
-import sary from '../../assets/vendors/images/banner-img.png'
+import sary from '../../assets/src/images/layout/v1.jpg'
 import { Link } from "react-router-dom";
 import Footer from "../../Footer";
 import withRouter from "../Navigation/WithRouter";
+import { useEffect } from "react";
 import AnnonceService from "../services/AnnonceService";
 import withNavigateHook from "../Navigation/WithNavigateHook";
 class Annonce extends Component{
@@ -28,13 +29,13 @@ class Annonce extends Component{
     componentDidMount() {
         this.fetchData();
     }
-    
-    componentDidUpdate(prevProps) {
-        if (this.props !== prevProps) {
+
+    FetchDataComponent = () => {
+        useEffect(() => {
             this.fetchData();
-        }
+        }, [this.state]);
+        return null;
     }
-    
     fetchData = () => {
         let token = sessionStorage.getItem("token");
         let user = sessionStorage.getItem("utilisateur");

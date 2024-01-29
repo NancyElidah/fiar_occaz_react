@@ -93,7 +93,10 @@ const Gestion = () => {
 					</table>
 					<div className="collapse collapse-box" id="basic-table" >
 						<div className="code-box">
-							
+							<div className="clearfix">
+								<a href="javascript:;" className="btn btn-primary btn-sm code-copy pull-left"  data-clipboard-target="#basic-table-code"><i className="fa fa-clipboard"></i> Copy Code</a>
+								<a href="#basic-table" className="btn btn-primary btn-sm pull-right" rel="content-y"  data-toggle="collapse" role="button"><i className="fa fa-eye-slash"></i> Hide Code</a>
+							</div>
 							<pre /><code className="xml copy-pre" id="basic-table-code"></code>
                         </div></div></div>
                         </div></div></div></div>

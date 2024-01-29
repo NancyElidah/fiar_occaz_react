@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Footer from "../../../Footer";
 import Header from "../../../Header";
+import Boite from "../../services/Boite";
 import withRouter from "../../Navigation/WithRouter";
 import { useEffect } from "react";
 import withNavigateHook from "../../Navigation/WithNavigateHook";

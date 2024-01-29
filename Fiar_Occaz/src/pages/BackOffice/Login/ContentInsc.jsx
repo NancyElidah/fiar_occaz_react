@@ -4,44 +4,19 @@ import { Component } from "react";
 import withNavigateHook from "../Navigation/WithNavigateHook";
 import UserService from "../services/UserService";
 import { Link } from "react-router-dom";
-class ContentLogin extends Component{
+class ContentInsc extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
+            nom:'',
 			email:'',
 			motDePasse:'',
-			info:{}
+            etat : ''
 		}
-		this.login = this.login.bind(this);
 		this.handleEmail = this.handleEmail.bind(this);
 		this.handleMotDePasse = this.handleMotDePasse.bind(this);
-	}
-	login(e){
-		e.preventDefault();
-		var email = this.state.email;
-		var motDePasse = this.state.motDePasse;
-
-		console.log(email , motDePasse)
-		UserService.loginUser(email,motDePasse).then(res => {
-			this.setState({info:res.data});
-			if(res.data.token==null){
-				alert("Vous n'êtes pas inscrit sur notre site");
-			}else{
-				if(res.data.token=='invalid'){
-					alert('connexion invalid');
-				}else{
-					if(res.data.status == 10){
-						console.log(res.data.user);
-						sessionStorage.setItem("utilisateur",res.data.user);
-						sessionStorage.setItem("token",res.data.token);
-						sessionStorage.setItem("user",res.data.name);
-						this.props.navigation(`${sessionStorage.getItem("token")}/accueil`);
-					}else{
-						alert("Erreur");
-					}
-				}
-			}
-		});
+        this.handleNom = this.handleNom.bind(this);
+        this.handleEtat = this.handleEtat.bind(this);
 	}
 	handleEmail= (e) => {
         var value = e.target.value;
@@ -50,11 +25,38 @@ class ContentLogin extends Component{
         })
     }
 
+    handleNom= (e) => {
+        var value = e.target.value;
+        this.setState({
+            nom :value
+        })
+    }
+
 	handleMotDePasse= (e) => {
         var value = e.target.value;
         this.setState({
             motDePasse :value
         })
+    }
+
+    handleEtat= (e) => {
+        var value = e.target.value;
+        this.setState({
+            etat :value
+        })
+    }
+    inscription (e){
+        e.preventDefault();
+        let user = {
+            nom : this.state.nom , 
+            email : this.state.email,
+            password : this.state.motDePasse , 
+            etat : this.state.etat
+        }
+        UserService.signUp(user).then((res) => {
+            alert("Vous êtes maintenant inscrit sur Fiar'Occaz");
+            this.props.navigation('/');
+        });
     }
 	render(){
 		return (
@@ -68,27 +70,33 @@ class ContentLogin extends Component{
 					<div className="col-md-6 col-lg-5">
 						<div className="login-box bg-white box-shadow border-radius-10">
 							<div className="login-title">
-								<h2 className="text-center text-primary">Connection sur Fiar'Occaz</h2>
+								<h2 className="text-center text-primary">Inscription sur Fiar'Occaz</h2>
 							</div>
 							<form>
 								<div className="select-role">
 									<div className="btn-group btn-group-toggle" data-toggle="buttons">
 										<label className="btn">
-											<input type="radio" name="options" id="admin" />
+											<input type="radio" name="options" id="admin" value={10} onChange={this.handleEtat} />
 												<div className="icon"><img src={personne} className="svg" alt="" /></div>
 												<span>Je suis</span>
 												l'admin
 										</label>
 										<label className="btn">
-											<input type="radio" name="options" id="user" />
+											<input type="radio" name="options" id="user" value={5} onChange={this.handleEtat} />
 											<div className="icon"><img src={personne} className="svg" alt="" /></div>
 											<span>Je suis </span>
 											un Client
 										</label>
 									</div>
 								</div>
+                                <div className="input-group custom">
+									<input type="text" className="form-control form-control-lg" placeholder="Votre Nom" onChange={this.handleNom} />
+									<div className="input-group-append custom">
+										<span className="input-group-text"><i className="icon-copy dw dw-user1"></i></span>
+									</div>
+								</div>
 								<div className="input-group custom">
-									<input type="email" className="form-control form-control-lg" placeholder="Votre email"  onChange={this.handleEmail} />
+									<input type="email" className="form-control form-control-lg" placeholder="Votre email" onChange={this.handleEmail} />
 									<div className="input-group-append custom">
 										<span className="input-group-text"><i className="icon-copy dw dw-user1"></i></span>
 									</div>
@@ -103,11 +111,11 @@ class ContentLogin extends Component{
 									<div className="col-sm-12">
 										<div className="input-group mb-0">
 											
-											<button className="btn btn-primary btn-lg btn-block" onClick={this.login}> Se Connecter</button>
+											<button className="btn btn-primary btn-lg btn-block" onClick={this.login}>S'inscrire</button>
 										</div>
 										<div className="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OU</div>
 										<div className="input-group mb-0">
-											<Link to="/inscription" className="btn btn-outline-primary btn-lg btn-block">S'inscrire</Link>
+											<Link to="/" className="btn btn-outline-primary btn-lg btn-block" >Annuler</Link>
 										</div>
 									</div>
 								</div>
@@ -122,4 +130,4 @@ class ContentLogin extends Component{
 		)
 	}
 }
-export default withNavigateHook(ContentLogin);
+export default withNavigateHook(ContentInsc);
