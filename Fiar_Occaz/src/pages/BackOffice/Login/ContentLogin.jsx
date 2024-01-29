@@ -8,10 +8,8 @@ class ContentLogin extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			emailValues:'nancy@gmail.com',
-			pass : 'mdp',
-			email:'',
-			motDePasse:'',
+			email:'nancy@gmail.com',
+			motDePasse:'mdp',
 			info:{}
 		}
 		this.login = this.login.bind(this);
@@ -47,7 +45,7 @@ class ContentLogin extends Component{
 	}
 	handleEmail= (e) => {
         var value = e.target.value;
-		console.log(value)
+		console.log(value +"e")
         this.setState({
             email :value
         })
@@ -92,13 +90,13 @@ class ContentLogin extends Component{
 									</div>
 								</div>
 								<div className="input-group custom">
-									<input type="email" className="form-control form-control-lg" placeholder="Votre email" value={this.state.emailValues}  onChange={event => this.handleEmail(event)} />
+									<input type="email" className="form-control form-control-lg" placeholder="Votre email" value={this.state.email}  onChange={event => this.handleEmail(event)} />
 									<div className="input-group-append custom">
 										<span className="input-group-text"><i className="icon-copy dw dw-user1"></i></span>
 									</div>
 								</div>
 								<div className="input-group custom">
-									<input type="password" className="form-control form-control-lg" placeholder="**********" value={this.state.pass} onChange={event => this.handleMotDePasse(event)}/>
+									<input type="password" className="form-control form-control-lg" placeholder="**********" value={this.state.motDePasse} onChange={event => this.handleMotDePasse(event)}/>
 									<div className="input-group-append custom">
 										<span className="input-group-text"><i className="dw dw-padlock1"></i></span>
 									</div>
