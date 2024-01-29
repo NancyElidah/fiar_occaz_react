@@ -9,7 +9,7 @@ class ListeAnnonce extends Component{
     constructor(props){
         super(props);
         this.state = {
-            liste_marque :[]
+            liste_marque :[],
         }
     }
     componentDidMount(){
