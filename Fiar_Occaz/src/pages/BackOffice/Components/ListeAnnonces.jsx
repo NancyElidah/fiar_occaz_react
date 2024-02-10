@@ -46,17 +46,17 @@ class ListeAnnonce extends Component{
                                         </div>
                                         <div className="col-md-10" style={{marginLeft:30}}>
                                             <p>{modele.description}</p>
-                                            <p>{modele.idannonce}</p>
+                                            <p>{modele.idAnnonce}</p>
                                         </div>
                                         <div className="col-md-10" style={{marginLeft:30}}>
                                             <p>{modele.voiture.marque.nom}</p>
-                                            <p>{modele.idannonce}</p>
+                                            <p>{modele.idAnnonce}</p>
                                         </div>
                                         <div className="col-md-10" style={{marginLeft:30}}>
                                             <p style={{fontWeight:"bolder"}}>Prix : {modele.voiture.prix} </p>
                                         </div>
                                         <div className="pull-right" style={{marginTop:-20 , paddingLeft:20}}>
-                                            <Link to={`view_annonce/${modele.idannonce}`}  className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button" ><i className="fa fa-eye"></i></Link>
+                                            <Link to={`view_annonce/${modele.idAnnonce}`}  className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button" ><i className="fa fa-eye"></i></Link>
                                         </div>
                                     </div>
                                 </div>
