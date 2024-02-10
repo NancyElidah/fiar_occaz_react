@@ -45,7 +45,7 @@ class ListeAnnonce extends Component{
                                                 <img src={test} alt="" />
                                         </div>
                                         <div className="col-md-10" style={{marginLeft:30}}>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ut harum quod obcaecati, ex voluptatibus tempora pariatur, voluptas qui magni libero, quo mollitia. Iure tempora cumque sint. Quas, ratione quaerat.</p>
+                                            <p>{modele.description}</p>
                                         </div>
                                         <div className="col-md-10" style={{marginLeft:30}}>
                                             <p style={{fontWeight:"bolder"}}>Prix : {modele.voiture.prix} </p>
