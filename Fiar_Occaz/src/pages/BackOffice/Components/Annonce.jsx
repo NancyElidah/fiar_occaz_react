@@ -43,15 +43,15 @@ class Annonce extends Component{
         AnnonceService.getOneAnnonce(token, user, this.state.id).then((res) => {
             this.setState({ 
                 description : res.data.description ,
-                prix:res.data.idvoiture.prix,
-                type:res.data.idvoiture.type.nom,
-                modele:res.data.idvoiture.modele.nom,
-                marque:res.data.idvoiture.marque.nom,
-                boite:res.data.idvoiture.boitevitesse.nom,
-                energie: res.data.idvoiture.energie.energie,
-                couleur:res.data.idvoiture.couleur.couleur,
-                nombre_place:res.data.idvoiture.nbPlace,
-                nombre_porte:res.data.idvoiture.nbPorte
+                prix:res.data.voiture.prix,
+                type:res.data.voiture.type.nom,
+                modele:res.data.voiture.modele.nom,
+                marque:res.data.voiture.marque.nom,
+                boite:res.data.voiture.boitevitesse.nom,
+                energie: res.data.voiture.energie.energie,
+                couleur:res.data.voiture.couleur.couleur,
+                nombre_place:res.data.voiture.nbPlace,
+                nombre_porte:res.data.voiture.nbPorte
             });
         });
     }
@@ -90,7 +90,7 @@ class Annonce extends Component{
                 <div className="pull-right">
                     <Link to="/liste_annonce" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button" ><i className="fa fa-remove"></i></Link>
                 </div>
-                    <p class="font-18 max-width-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde hic non repellendus debitis iure, doloremque assumenda. Autem modi, corrupti, nobis ea iure fugiat, veniam non quaerat mollitia animi error corporis.</p>
+                    <p class="font-18 max-width-600">{this.state.description}.</p>
                     
                     <table className="table" style={{border:"less"}}>
                             <thead>
