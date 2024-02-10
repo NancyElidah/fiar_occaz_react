@@ -99,15 +99,6 @@ class Header extends Component {
 						 </li>	
 					 </ul>
 				 </div>
-				 <div className="sidebar-menu">
-					 <ul id="accordion-menu">
-					 <li className="dropdown">
-					 <Link to={`/${sessionStorage.getItem("token")}/liste_voiture`} className="dropdown-toggle">
-						 <span className="micon"><i className="icon-copy fa fa-plus-square-o" aria-hidden="true"></i></span><span className="">Voiture</span>
-					 </Link>
-						 </li>	
-					 </ul>
-				 </div>
 			 </div>
 		 </div>
 		 <div className="main-container">

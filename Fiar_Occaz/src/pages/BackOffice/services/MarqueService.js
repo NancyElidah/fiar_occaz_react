@@ -1,5 +1,5 @@
 import axios from 'axios';
-const base_url = "https://fiaroccazback-production.up.railway.app/api/marques";
+const base_url = "https://fiarapartie2-production.up.railway.app/api/marques";
 
 class MarqueService {
     createMarque(token , id , marque){

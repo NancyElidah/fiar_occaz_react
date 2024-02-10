@@ -1,12 +1,12 @@
 import axios from 'axios';
-const base_url = "https://fiaroccazback-production.up.railway.app/commission";
+const base_url = "https://fiarapartie2-production.up.railway.app/commission";
 
 class ComService {
     createCommission(token , id , commission){
         return axios.post(base_url+'/'+token+'/add/'+id,commission);
     }
     getAllCommission(token , id ){
-        return axios.get('https://fiaroccazback-production.up.railway.app/v_commission'+'/'+token+'/getall/'+id);
+        return axios.get('https://fiarapartie2-production.up.railway.app/v_commission'+'/'+token+'/getall/'+id);
     }
     UpdateCommission(token,id , idCommission , Commission){
         return axios.put(base_url+'/'+token+'/update/'+id+'/'+idCommission,Commission);

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const base_url = "https://fiaroccazback-production.up.railway.app/login";
+const base_url = "https://fiarapartie2-production.up.railway.app/login";
 
 class UserService {
     loginUser(email, motDePasse){
@@ -10,7 +10,7 @@ class UserService {
         });
     }
     signUp (user){
-        return axios.post("https://fiaroccazback-production.up.railway.app/sign_up",user);
+        return axios.post("https://fiarapartie2-production.up.railway.app/sign_up",user);
     }
     
 }
