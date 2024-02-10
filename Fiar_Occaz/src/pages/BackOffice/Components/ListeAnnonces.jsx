@@ -46,6 +46,11 @@ class ListeAnnonce extends Component{
                                         </div>
                                         <div className="col-md-10" style={{marginLeft:30}}>
                                             <p>{modele.description}</p>
+                                            <p>{modele.idannonce}</p>
+                                        </div>
+                                        <div className="col-md-10" style={{marginLeft:30}}>
+                                            <p>{modele.voiture.marque.nom}</p>
+                                            <p>{modele.idannonce}</p>
                                         </div>
                                         <div className="col-md-10" style={{marginLeft:30}}>
                                             <p style={{fontWeight:"bolder"}}>Prix : {modele.voiture.prix} </p>
