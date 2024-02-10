@@ -34,7 +34,7 @@ class ListeAnnonce extends Component{
             <Header/>
             <this.FetchDataComponent />
             <div className="main-container" style={{marginTop:-150}}>
-            {/* {
+            {
                         this.state.liste_marque.map (
                             modele=>
                             <div className="row" style={{float:"left",width:500,marginLeft:20,marginRight:20,marginTop:20}}>
@@ -57,9 +57,10 @@ class ListeAnnonce extends Component{
                                 </div>
                             </div>
                         )
-                } */}
+                }
                 
-                <div className="row" style={{float:"left",width:500,marginLeft:20,marginRight:20,marginTop:20}}>
+                
+                {/* <div className="row" style={{float:"left",width:500,marginLeft:20,marginRight:20,marginTop:20}}>
                     <div >
                         <div className="card-box pd-30 pt-10 height-100-p">
                             <div className="col-md-7" style={{marginLeft:70}}>
@@ -112,7 +113,7 @@ class ListeAnnonce extends Component{
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <Footer/>
             </>
