@@ -42,7 +42,7 @@ class Statistique extends React.Component {
       });
       this.setState({
         data_vendu:formData,
-        title_vendu: 'statistique par '+this.state.etat + "pour les voitures  Vendues",
+        title_vendu: 'statistique par '+this.state.etat + " pour les voitures  Vendues",
         type:this.state.etat
       });
     }); 
@@ -67,7 +67,7 @@ class Statistique extends React.Component {
       });
       this.setState({
         data_nonVendu:formData,
-        title_nonvendu: 'statistique par '+this.state.etat + "Pour les voitures non vendues ",
+        title_nonvendu: 'statistique par '+this.state.etat + " Pour les voitures non vendues ",
         type:this.state.etat
       });
     }); 
@@ -103,7 +103,7 @@ class Statistique extends React.Component {
             </PieChart>
 </div>
 </div>
-          <div className="pull-right">
+<div className="pd-ltr-20 xs-pd-20-10">
           <h4 className="text-blue h4" style={{color:"blue"}}>{this.state.title_nonvendu} </h4>
                                 <p>Stat <code>.{this.state.type}</code></p>
               <div className="form-group row" style={{marginLeft:300}}>
