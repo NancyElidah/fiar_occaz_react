@@ -39,7 +39,8 @@ class Annonce extends Component{
     fetchData = () => {
         let token = sessionStorage.getItem("token");
         let user = sessionStorage.getItem("utilisateur");
-        AnnonceService.getOneAnnonce(token, user, this.state.idboite).then((res) => {
+
+        AnnonceService.getOneAnnonce(token, user, this.state.id).then((res) => {
             this.setState({ 
                 description : res.data.description ,
                 prix:res.data.idvoiture.prix,
