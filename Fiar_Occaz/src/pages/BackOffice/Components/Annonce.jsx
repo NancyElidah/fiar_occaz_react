@@ -49,7 +49,7 @@ class Annonce extends Component{
                 marque:res.data.voiture.marque.nom,
                 boite:res.data.voiture.boiteVitesse.nom,
                 energie: res.data.voiture.energie.energie,
-                couleur:res.data.voiture.couleur.couleur,
+                couleur:res.data.voiture.couleur.nom,
                 nombre_place:res.data.voiture.nbPlace,
                 nombre_porte:res.data.voiture.nbPorte
             });
