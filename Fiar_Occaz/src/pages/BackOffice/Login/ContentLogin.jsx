@@ -8,8 +8,8 @@ class ContentLogin extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			email:'nancy@gmail.com',
-			motDePasse:'mdp',
+			email:'elodie@gmail.com',
+			motDePasse:'elodie1',
 			info:{}
 		}
 		this.login = this.login.bind(this);
