@@ -88,7 +88,7 @@ class Annonce extends Component{
                 
                 <div class="col-md-8">
                 <div className="pull-right">
-                    <Link to="/liste_annonce" className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button" ><i className="fa fa-remove"></i></Link>
+                    <Link to={`${sessionStorage.getItem("token")}/liste_annonce`} className="btn btn-primary btn-sm scroll-click" rel="content-y"  data-toggle="collapse" role="button" ><i className="fa fa-remove"></i></Link>
                 </div>
                     <p class="font-18 max-width-600">{this.state.description}.</p>
                     
@@ -140,7 +140,7 @@ class Annonce extends Component{
                 </div>
                 
                 <div className="col-sm-12 col-md-12">
-                    <button className="btn btn-primary" onClick = {this.addBoite} style={{width:250 , marginLeft:820}}>Valider</button>
+                    <button className="btn btn-primary" onClick = {this.valid} style={{width:250 , marginLeft:820}}>Valider</button>
                 </div>
             </div>
         </div>
