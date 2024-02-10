@@ -21,7 +21,7 @@ class Statistique extends React.Component {
     let token = sessionStorage.getItem("token");
     let id = sessionStorage.getItem("utilisateur");
     console.log(this.state.etat)
-    StatistiqueBord.getStatistique(token,id,this.state.etat ,10).then((res)=> {
+    StatistiqueBord.getStatistique(token,id,this.state.etat ,2).then((res)=> {
       const formData = res.data.map(item => {
         if(this.state.etat ===":type"){
             return {
@@ -46,7 +46,7 @@ class Statistique extends React.Component {
         type:this.state.etat
       });
     }); 
-    StatistiqueBord.getStatistique(token,id,this.state.etat ,5).then((res)=> {
+    StatistiqueBord.getStatistique(token,id,this.state.etat ,0).then((res)=> {
       const formData = res.data.map(item => {
         if(this.state.etat ===":type"){
             return {
