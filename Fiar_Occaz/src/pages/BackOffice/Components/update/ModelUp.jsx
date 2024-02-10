@@ -4,7 +4,6 @@ import Header from "../../../Header";
 import withRouter from "../../Navigation/WithRouter";
 import { useEffect } from "react";
 import withNavigateHook from "../../Navigation/WithNavigateHook";
-import CouleurService from "../../services/CouleurService";
 import Modele from "../../services/Modele";
 
 class ModelUp extends Component {

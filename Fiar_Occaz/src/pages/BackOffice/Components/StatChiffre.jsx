@@ -5,21 +5,6 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'r
 import withRouter from '../Navigation/WithRouter';
 import StatistiqueBord from '../services/StatistiqueBord';
 
-const data = [
- {name: 'Jan', Montant: 4000},
- {name: 'Feb', Montant: 3000},
- {name: 'Mar', Montant: 2000},
- {name: 'Apr', Montant: 2780},
- {name: 'May', Montant: 1890},
- {name: 'Jun', Montant: 2890},
- {name: 'Jul', Montant: 3890},
- {name: 'Aug', Montant: 4890},
- {name: 'Sep', Montant:5890},
- {name: 'Oct', Montant: 6890},
- {name: 'Nov', Montant: 7890},
- {name: 'Dec', Montant: 8890},
-];
-
 class  StatChiffre extends Component{
     constructor(props){
         super(props);

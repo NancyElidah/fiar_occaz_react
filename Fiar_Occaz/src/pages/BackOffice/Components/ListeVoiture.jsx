@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import Header from "../../Header"
 import { Component } from "react";
-import TypeService from "../services/TypeService";
 import { useEffect } from "react";
 import VoitureService from "../services/VoitureService";
 class ListeVoiture extends Component {
