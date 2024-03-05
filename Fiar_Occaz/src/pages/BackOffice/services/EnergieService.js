@@ -1,5 +1,5 @@
 import axios from 'axios';
-const base_url = "https://fiaroccazback-production.up.railway.app/api/energies";
+const base_url = "https://fiarapartie2-production-2baf.up.railway.app/api/energies";
 
 class EnergieService {
     createEnergie(token,id,Energie){

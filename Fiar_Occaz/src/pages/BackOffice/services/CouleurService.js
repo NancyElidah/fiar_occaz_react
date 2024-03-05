@@ -1,5 +1,5 @@
 import axios from 'axios';
-const base_url = "https://fiarapartie2-production.up.railway.app/api/couleurs";
+const base_url = "https://fiarapartie2-production-2baf.up.railway.app/api/couleurs";
 
 class CouleurService {
     createCouleur(token,id,Couleur){
